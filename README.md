@@ -52,7 +52,7 @@ textInputProcessor.setVecorizer("./Fine_Grain_Sentiment_Analyser/Model/Vectorize
 text_input="I need to try this Model"
 
 # Preprocessing the Input
-preprocessed_input=textInputProcessor.getPreprocessTheArray("not good")
+preprocessed_input=textInputProcessor.getPreprocessTheArray(text_input)
 
 # generating the result
 sentiment_result=textSentimentAnalyser.predict(preprocessed_input)
@@ -62,7 +62,7 @@ print(sentiment_result)
 <p>output</p>
 <pre>
 > python Test.py
-disapproval
+desire
 </pre>
 
 <hr>
