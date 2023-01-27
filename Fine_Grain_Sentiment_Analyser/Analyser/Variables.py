@@ -1,9 +1,11 @@
 import re
 from nltk.corpus import stopwords
+
 Regular_expression_definition_for_html_tags=re.compile('<.*?>')
 Regular_expression_definition_for_digits=re.compile('\d+\s|\s\d+|\s\d+\s')
 Regular_expression_definition_for_links=re.compile('http://\S+|https://\S+')
 english_stop_words=stopwords.words('english')
+
 class_list=[
 "admiration",
 "anger",
@@ -30,6 +32,7 @@ class_list=[
 "sadness",
 "surprise",
 ]
+
 Sentiment_Level_Grouped_Emotions={
     "positive": [
         "amusement", 
@@ -132,4 +135,3 @@ selected_class_list=[
 "sadness",
 "surprise",
 ]
-
