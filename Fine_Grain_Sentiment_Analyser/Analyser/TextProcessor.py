@@ -4,9 +4,7 @@ from nltk.stem import WordNetLemmatizer
 import joblib
 from scipy.sparse import csr_matrix
 import numpy
-
 word_lemitizer = WordNetLemmatizer()
-
 
 class TextInputProcessor:
     """
@@ -50,6 +48,16 @@ class TextInputProcessor:
         Processed_Text=[" ".join(self.getPreprocessedInput(sentence)) for sentence in inputText]
         print(Processed_Text)
         return self.Vectorizer.transform(Processed_Text)
+    def getPreprocessedText(self,inputText:str)->list:
+        """
+        Args:
+            inputText (str): input sentence or paragraph
+
+        Returns:
+            list: list of preprocessed sentence
+        """
+        inputText=[ text for text in inputText.split(".") if len(text)>1]
+        return [" ".join(self.getPreprocessedInput(sentence)) for sentence in inputText]
     def getVectorArray(self,inputVector:csr_matrix)->list:
         """
         Args:
